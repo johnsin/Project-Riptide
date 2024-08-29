@@ -1,0 +1,25 @@
+{
+    "name": "xrpl-amm-application",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "frontend",
+      "backend"
+    ],
+    "scripts": {
+      "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+      "start:frontend": "npm start --workspace=frontend",
+      "start:backend": "npm start --workspace=backend",
+      "dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\"",
+      "dev:backend": "npm run dev --workspace=backend",
+      "build": "npm run build --workspace=frontend",
+      "test": "npm test --workspace=frontend"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.0"
+    },
+    "dependencies": {},
+    "engines": {
+      "node": ">=14.0.0"
+    }
+  }
